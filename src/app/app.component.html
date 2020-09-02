@@ -1,0 +1,112 @@
+<mat-card class="customer-card">
+  <mat-horizontal-stepper [linear]="true" #stepper>
+    <mat-step [stepControl]="customerDetails">
+      <form [formGroup]="customerDetails">
+        <ng-template matStepLabel>Customer details</ng-template>
+        <div class="row">
+          <div class="col">
+            <mat-form-field>
+              <mat-label>Name</mat-label>
+              <input matInput placeholder="Last name, First name" formControlName="name" required>
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field>
+              <mat-label>Address</mat-label>
+              <input matInput formControlName="address" placeholder="Ex. 1 Main St, New York, NY" required>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field>
+              <mat-label>Credit card Number</mat-label>
+              <input matInput formControlName="creditCard" placeholder="Ex. 2334-4234-4322" required>
+            </mat-form-field>
+          </div>
+          <div class="col"></div>
+        </div>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="vehicleDetails">
+      <form [formGroup]="vehicleDetails">
+        <ng-template matStepLabel>Vehicle details</ng-template>
+        <div class="row">
+          <div class="col">
+            <mat-form-field>
+              <mat-label>car make</mat-label>
+              <input matInput formControlName="carMake" placeholder="Ex. BMW" required>
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field>
+              <mat-label>Model</mat-label>
+              <input matInput formControlName="model" placeholder="Ex. 2020" required>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field>
+              <mat-label>Year</mat-label>
+              <input matInput formControlName="year" placeholder="Ex. 2020" required>
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field>
+              <mat-label>Mileage</mat-label>
+              <input matInput formControlName="mileage" placeholder="Ex. 2020" required>
+            </mat-form-field>
+          </div>
+        </div>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Summary</ng-template>
+      <h3>Customer details</h3>
+      <div class="row">
+        <div class="col">
+          <p><b>Name: </b> {{customer.name.value}}</p>
+        </div>
+        <div class="col">
+          <p><b>address: </b> {{customer.address.value}}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <p><b>Credit Card: </b> {{customer.creditCard.value}}</p>
+        </div>
+        <div class="col"></div>
+      </div>
+      <hr />
+      <h3>Vehicle details</h3>
+      <div class="row">
+        <div class="col">
+          <p><b>Car Make:</b> {{vehicle.carMake.value}}</p>
+        </div>
+        <div class="col">
+          <p><b>Model:</b> {{vehicle.model.value}}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <p><b>Year:</b> {{vehicle.year.value}}</p>
+        </div>
+        <div class="col">
+          <p><b>Mileage:</b> {{vehicle.mileage.value}}</p>
+        </div>
+      </div>
+      <hr />
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+      </div>
+    </mat-step>
+  </mat-horizontal-stepper>
+</mat-card>

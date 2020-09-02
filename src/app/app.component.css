@@ -1,0 +1,27 @@
+.mat-stepper-horizontal {
+    margin-top: 8px;
+  }
+  
+  .mat-form-field {
+    margin-top: 16px;
+    width: 100%;
+  }
+
+  .customer-card {
+    width: 60%;
+    margin: 0 auto;
+  }
+  .row {
+    display: flex;
+    flex-direction: row;
+  }
+  .col {
+    flex: 1;
+    padding: 0 5px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .row {
+      flex-direction: column;
+    }
+  }
